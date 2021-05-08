@@ -11,7 +11,7 @@ require('chai')
 function token(n) {
   return web3.utils.toWei(n, 'ether');
 }
-contract('TokenFarm', ([owner, invester]) => {
+contract('TokenFarm', ([owner, investor]) => {
   let daiToken, dappToken, tokenFarm;
   before(async () => {
     //load contracts
@@ -23,7 +23,7 @@ contract('TokenFarm', ([owner, invester]) => {
     await dappToken.transfer(tokenFarm.address, token('1000000'));
 
     // send tokens to invester
-    await daiToken.transfer(invester, token('100'), { from: owner });
+    await daiToken.transfer(investor, token('100'), { from: owner });
   });
 
   describe('Mock DAI deployment', async () => {
@@ -46,6 +46,20 @@ contract('TokenFarm', ([owner, invester]) => {
     it('contract has tokens', async () => {
       let balance = await dappToken.balanceOf(tokenFarm.address);
       assert.equal(balance.toString(), token('1000000'));
+    });
+  });
+
+  describe('Farming Token', async () => {
+    it('reward investors for staking mDai', async () => {
+      let result;
+
+      // Check investor balance before staking
+      result = await daiToken.balanceOf(investor);
+      assert.equal(
+        result.toString(),
+        token('100'),
+        'Investor balance correct for staking'
+      );
     });
   });
 });
