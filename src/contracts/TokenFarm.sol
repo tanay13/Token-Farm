@@ -69,7 +69,7 @@ contract TokenFarm {
         stakingBalance[msg.sender] = 0;
 
         // update staking status
-        isStaking[mssg.sender] = false;
+        isStaking[msg.sender] = false;
 
 
 

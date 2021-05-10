@@ -100,7 +100,7 @@ contract('TokenFarm', ([owner, investor]) => {
       await tokenFarm.issueToken({ from: owner });
 
       // check balances after issuance
-      result = await dappToken.balanceOf('investor');
+      result = await dappToken.balanceOf(investor);
       assert.equal(
         result.toString(),
         token('100'),
@@ -128,10 +128,17 @@ contract('TokenFarm', ([owner, investor]) => {
         'Token Farm mock DAI balance correct after staking'
       );
 
-      result = await daiToken.isStaking(investor);
+      result = await tokenFarm.stakingBalance(investor);
       assert.equal(
         result.toString(),
-        false,
+        token('0'),
+        'investor staking balance correct after unstaking'
+      );
+
+      result = await tokenFarm.isStaking(investor);
+      assert.equal(
+        result.toString(),
+        'false',
         'investor staking status correct after unstaking'
       );
     });
