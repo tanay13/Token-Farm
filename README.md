@@ -1,3 +1,9 @@
 ## TOKEN FARM
 
-![Architecture](https://drive.google.com/file/d/1Krk2tfe-WJqtxL-aHA8C1gUWbs5IgPIf/view)
+Decentralized Dummy Finance Application
+
+ <br>
+ 
+ - Architecture
+
+<img src="https://i.ibb.co/3M8Q6XD/TOKENFARM.jpg" alt="TOKENFARM" border="0">
