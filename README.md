@@ -6,4 +6,4 @@ Decentralized Dummy Finance Application
  
  - Architecture
 
-<img src="https://i.ibb.co/3M8Q6XD/TOKENFARM.jpg" alt="TOKENFARM" border="0">
+<img src="https://i.ibb.co/dgYG623/TOKENFARM-1.jpg" alt="TOKENFARM-1" border="0">
