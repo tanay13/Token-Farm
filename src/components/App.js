@@ -4,6 +4,12 @@ import './App.css';
 import Web3 from 'web3';
 
 class App extends Component {
+  async componentWillUnmount() {
+    await this.loadWeb3();
+  }
+
+  async loadBlockchainData()
+
   async loadWeb3() {
     if (window.ehtereum) {
       window.web3 = new Web3(window.ehtereum);
